@@ -1,0 +1,426 @@
+/* WhatIf Ledger Custom Keycloak Theme */
+/* Your exact color scheme: #0F1724, #081023, #0B1220, #062E2A, #9FC7D9, #CFFBF0 */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #0F1724;
+    color: white;
+}
+
+/* Main container - Split screen layout */
+#kc-header-wrapper {
+    display: none !important;
+}
+
+.login-pf body {
+    background: #0F1724;
+}
+
+.login-pf-page {
+    display: flex;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Left side - Hero section with proper containment */
+.kc-login-tooltip {
+    display: none;
+}
+
+.login-pf-page::before {
+    content: '';
+    flex: 1;
+    width: 50%;
+    background: linear-gradient(135deg, #081023 0%, #0B1220 50%, #062E2A 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 100vh;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+/* Create the left side with beautiful desert image - equal spacing */
+.login-pf-page::after {
+    content: '';
+    position: absolute;
+    left: 40px;
+    top: 40px;
+    width: calc(50% - 100px);
+    bottom: 40px;
+    background-image: url('../images/login-desert.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    z-index: 10;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Right side - Form container (50%) */
+.card-pf {
+    flex: 1;
+    width: 50%;
+    max-width: none;
+    margin: 0;
+    padding: 80px 60px;
+    background: #0F1724;
+    border: none;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Logo and header */
+#kc-header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+#kc-page-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 12px;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.kc-login-tooltip+p,
+#kc-content-wrapper>p {
+    color: #9FC7D9;
+    font-size: 16px;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+/* Form styling */
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 16px 20px;
+    background: #0B1220;
+    border: 1px solid #374151;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #CFFBF0;
+    box-shadow: 0 0 0 3px rgba(207, 251, 240, 0.1);
+}
+
+.form-control::placeholder {
+    color: #9CA3AF;
+}
+
+/* Labels */
+label {
+    color: #9FC7D9;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Primary button - your beautiful teal */
+.btn-primary {
+    width: 100%;
+    padding: 16px 24px;
+    background: #CFFBF0;
+    color: #0F1724;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 8px;
+}
+
+.btn-primary:hover {
+    background: #9FC7D9;
+    transform: translateY(-1px);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Secondary actions - reduced spacing */
+.login-pf-signup {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 16px;
+    /* border-top: 1px solid #374151; */
+}
+
+.login-pf-signup a {
+    color: #CFFBF0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.login-pf-signup a:hover {
+    color: #9FC7D9;
+}
+
+/* Error messages */
+.alert-error {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #FCA5A5;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+/* Remember me checkbox */
+.checkbox label {
+    color: #9FC7D9;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.checkbox input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: #CFFBF0;
+}
+
+/* Social login buttons */
+.kc-social-links {
+    margin-top: 20px;
+}
+
+.kc-social-links .list-unstyled {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    list-style: none !important;
+    margin: 0;
+    padding: 0;
+}
+
+.kc-social-links .list-unstyled li {
+    list-style: none !important;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+}
+
+.kc-social-provider-button {
+    width: 100%;
+    padding: 14px 16px;
+    background: transparent;
+    border: 2px solid #374151;
+    border-radius: 0px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.kc-social-provider-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #9FC7D9;
+    color: white;
+    text-decoration: none;
+}
+
+/* Google specific styling - hollow with icon placeholder */
+.kc-social-provider-button[id*="google"] {
+    border-color: #9FC7D9;
+    color: #9FC7D9;
+}
+
+.kc-social-provider-button[id*="google"]:hover {
+    border-color: #CFFBF0;
+    color: #CFFBF0;
+}
+
+/* Real Google icon */
+.kc-social-provider-button[id*="google"]::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-image: url('../images/google-48.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .login-pf-page {
+        flex-direction: column;
+    }
+
+    .login-pf-page::before {
+        min-height: 300px;
+        flex: none;
+    }
+
+    .login-pf-page::after {
+        font-size: 24px;
+        left: 40px;
+        right: 40px;
+        text-align: center;
+        top: 150px;
+        transform: none;
+    }
+
+    .card-pf {
+        max-width: none;
+        padding: 40px 24px;
+        min-height: auto;
+    }
+}
+
+/* Additional form elements */
+.form-group .required {
+    color: #CFFBF0;
+}
+
+.kc-form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px 0;
+}
+
+.kc-form-options a {
+    color: #9FC7D9;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.kc-form-options a:hover {
+    color: #CFFBF0;
+}
+
+/* Hide unwanted elements */
+.kc-logo-text,
+.kc-container-wrapper>.kc-content-wrapper>.alert,
+#kc-attempted-username,
+#kc-locale,
+.kc-logo-icon,
+#kc-header .kc-logo,
+.kc-logo {
+    display: none !important;
+}
+
+/* Hide language selector */
+.login-pf-page .kc-locale,
+#kc-locale-dropdown {
+    display: none !important;
+}
+
+/* FORCE ALL CORNERS TO BE SQUARE - OVERRIDE EVERYTHING */
+* {
+    border-radius: 4px !important;
+}
+
+input,
+button,
+.btn,
+.form-control,
+.card-pf,
+.kc-social-provider-button,
+.btn-primary,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="submit"],
+textarea,
+select {
+    border-radius: 4px !important;
+}
+
+/* Consistent link styling for all auth pages */
+.kc-form-options a,
+.login-pf-signup a,
+#kc-content-wrapper>p a,
+#kc-registration a,
+.reset-actions a:not(.btn-primary),
+.resend-link,
+a[href*="loginUrl"],
+a[href*="registrationUrl"],
+a[href*="loginResetCredentialsUrl"],
+#kc-header p a,
+.card-pf p a,
+p a[href*="loginUrl"] {
+    color: #CFFBF0 !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    transition: color 0.2s ease !important;
+    font-size: 14px !important;
+}
+
+.kc-form-options a:hover,
+.login-pf-signup a:hover,
+#kc-content-wrapper>p a:hover,
+#kc-registration a:hover,
+.reset-actions a:not(.btn-primary):hover,
+.resend-link:hover,
+a[href*="loginUrl"]:hover,
+a[href*="registrationUrl"]:hover,
+a[href*="loginResetCredentialsUrl"]:hover,
+#kc-header p a:hover,
+.card-pf p a:hover,
+p a[href*="loginUrl"]:hover {
+    color: #9FC7D9 !important;
+}
+
+/* Add spacing to form options and back links */
+.kc-form-options {
+    margin-top: 20px !important;
+    margin-bottom: 16px !important;
+}
+
+#kc-form-options {
+    margin-top: 24px !important;
+    margin-bottom: 20px !important;
+}
+
+/* Terms & Conditions link styling */
+.checkbox a {
+    color: #CFFBF0 !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+}
+
+.checkbox a:hover {
+    color: #9FC7D9 !important;
+}
