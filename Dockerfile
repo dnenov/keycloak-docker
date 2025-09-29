@@ -7,6 +7,9 @@ ADD --chown=keycloak:keycloak https://github.com/wadahiro/keycloak-discord/relea
 COPY /theme/keywind /opt/keycloak/themes/keywind
 COPY /theme/whatif-ledger /opt/keycloak/themes/whatif-ledger
 
+# Force cache bust and verify files
+RUN ls -la /opt/keycloak/themes/whatif-ledger/login/resources/css/
+RUN head -20 /opt/keycloak/themes/whatif-ledger/login/resources/css/whatif-ledger.css
 RUN /opt/keycloak/bin/kc.sh build
 
 FROM quay.io/keycloak/keycloak:latest
