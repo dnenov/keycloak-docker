@@ -92,21 +92,32 @@ body {
     text-align: center;
 }
 
-#kc-page-title {
-    font-size: 42px;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 12px;
-    line-height: 1.2;
-    text-align: center;
+#kc-page-title,
+h1#kc-page-title,
+.kc-page-title,
+h1 {
+    color: white !important;
+    font-size: 42px !important;
+    font-weight: 700 !important;
+    font-style: normal !important;
+    margin-bottom: 12px !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    font-family: 'Inter', sans-serif !important;
 }
 
 .kc-login-tooltip+p,
-#kc-content-wrapper>p {
-    color: #9FC7D9;
-    font-size: 16px;
-    margin-bottom: 32px;
-    text-align: center;
+#kc-content-wrapper>p,
+.kc-content-wrapper p,
+#kc-content-wrapper .instruction,
+.instruction {
+    color: #9FC7D9 !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    margin-bottom: 32px !important;
+    text-align: center !important;
+    line-height: 1.5 !important;
 }
 
 /* Form styling */
@@ -133,7 +144,37 @@ body {
 }
 
 .form-control::placeholder {
-    color: #9CA3AF;
+    color: #9CA3AF !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+}
+
+/* Force consistent form field styling */
+input.form-control,
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    height: auto !important;
+    min-height: 52px !important;
+    padding: 16px 20px !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    line-height: 1.4 !important;
+    background: #0B1220 !important;
+    border: 1px solid #374151 !important;
+    color: white !important;
+}
+
+input.form-control::placeholder,
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+    color: #9CA3AF !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    opacity: 1 !important;
 }
 
 /* Labels */
@@ -146,28 +187,40 @@ label {
 }
 
 /* Primary button - your beautiful teal */
-.btn-primary {
-    width: 100%;
-    padding: 16px 24px;
-    background: #CFFBF0;
-    color: #0F1724;
-    border: none;
-    border-radius: 12px;
-    font-size: 16px;
-    font-weight: 600;
-    font-family: 'Inter', sans-serif;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    margin-top: 8px;
+.btn-primary,
+input[type="submit"],
+button[type="submit"],
+.btn.btn-primary {
+    width: 100% !important;
+    padding: 16px 24px !important;
+    background: #CFFBF0 !important;
+    color: #0F1724 !important;
+    border: none !important;
+    border-radius: 4px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    font-family: 'Inter', sans-serif !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    margin-top: 8px !important;
+    text-decoration: none !important;
 }
 
-.btn-primary:hover {
-    background: #9FC7D9;
-    transform: translateY(-1px);
+.btn-primary:hover,
+input[type="submit"]:hover,
+button[type="submit"]:hover,
+.btn.btn-primary:hover {
+    background: #9FC7D9 !important;
+    color: #0F1724 !important;
+    transform: translateY(-1px) !important;
 }
 
-.btn-primary:active {
-    transform: translateY(0);
+.btn-primary:active,
+input[type="submit"]:active,
+button[type="submit"]:active,
+.btn.btn-primary:active {
+    transform: translateY(0) !important;
+    background: #9FC7D9 !important;
 }
 
 /* Secondary actions - reduced spacing */
@@ -239,7 +292,7 @@ label {
     padding: 14px 16px;
     background: transparent;
     border: 2px solid #374151;
-    border-radius: 0px;
+    border-radius: 4px !important;
     color: white;
     text-decoration: none;
     text-align: center;
