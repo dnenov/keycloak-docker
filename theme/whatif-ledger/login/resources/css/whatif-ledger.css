@@ -1,4 +1,5 @@
 /* WhatIf Ledger Custom Keycloak Theme */
+/* Version: 2024-01-30-v3 - Fixed Form Styling */
 /* Your exact color scheme: #0F1724, #081023, #0B1220, #062E2A, #9FC7D9, #CFFBF0 */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -380,24 +381,18 @@ label {
     display: none !important;
 }
 
-/* FORCE ALL CORNERS TO BE SQUARE - OVERRIDE EVERYTHING */
-* {
-    border-radius: 4px !important;
-}
-
-input,
-button,
-.btn,
+/* Keep form elements with proper rounded corners */
 .form-control,
-.card-pf,
-.kc-social-provider-button,
 .btn-primary,
 input[type="text"],
 input[type="email"],
 input[type="password"],
-input[type="submit"],
-textarea,
-select {
+input[type="submit"] {
+    border-radius: 4px !important;
+}
+
+/* Social buttons can be square */
+.kc-social-provider-button {
     border-radius: 4px !important;
 }
 
