@@ -18,117 +18,88 @@ body {
     color: white;
 }
 
-/* Main container - Split screen layout */
-#kc-header-wrapper {
-    display: none !important;
-}
-
+/* Main container - Clean 2-column layout */
 .login-pf body {
     background: #0F1724;
 }
 
 .login-pf-page {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     min-height: 100vh;
     margin: 0;
     padding: 0;
 }
 
-/* Left side - Hero section with proper containment */
+/* Left column - Hero section with image */
 .kc-login-tooltip {
     display: none;
 }
 
-.login-pf-page::before {
-    content: '';
-    flex: 1;
-    width: 50%;
+.login-pf-page-header {
     background: linear-gradient(135deg, #081023 0%, #0B1220 50%, #062E2A 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    min-height: 100vh;
-    padding: 40px;
+    padding: 30px;
     box-sizing: border-box;
 }
 
-/* Create the left side with beautiful desert image - equal spacing */
-.login-pf-page::after {
+#kc-header-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#kc-header-wrapper::after {
     content: '';
     position: absolute;
-    left: 40px;
-    top: 40px;
-    width: calc(50% - 80px);
-    bottom: 40px;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
     background-image: url('../images/login-desert.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 20px;
-    z-index: 10;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* Right side - Form container (50%) */
+/* Right column - Form container */
 .card-pf {
-    flex: 1;
-    width: 50%;
-    max-width: none;
-    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 80px 60px;
     background: #0F1724;
     border: none;
     box-shadow: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     min-height: 100vh;
+    box-sizing: border-box;
 }
 
 /* Logo and header */
 #kc-header {
-    margin-bottom: 40px;
     text-align: center;
 }
 
-#kc-page-title,
-h1#kc-page-title,
-.kc-page-title,
-h1 {
-    color: white !important;
-    font-size: 42px !important;
-    font-weight: 700 !important;
-    font-style: normal !important;
-    margin-bottom: 12px !important;
-    line-height: 1.2 !important;
-    text-align: center !important;
-    font-family: 'Inter', sans-serif !important;
+#kc-page-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 12px;
+    line-height: 1.2;
+    text-align: center;
 }
 
-/* NUCLEAR FIXES FOR "Sign in to your account" TEXT */
-.login-pf-page .card-pf .kc-login-tooltip+p,
-.login-pf-page .card-pf #kc-content-wrapper>p,
-.login-pf-page .card-pf .kc-content-wrapper p,
-.login-pf-page .card-pf #kc-content-wrapper .instruction,
-.login-pf-page .card-pf .instruction,
-.login-pf-page .kc-login-tooltip+p,
-.login-pf-page #kc-content-wrapper>p,
-.login-pf-page .kc-content-wrapper p,
-.login-pf-page #kc-content-wrapper .instruction,
-.login-pf-page .instruction,
 .kc-login-tooltip+p,
-#kc-content-wrapper>p,
-.kc-content-wrapper p,
-#kc-content-wrapper .instruction,
-.instruction {
-    color: #9FC7D9 !important;
-    font-size: 16px !important;
-    font-weight: 400 !important;
-    font-style: normal !important;
-    margin-bottom: 32px !important;
-    text-align: center !important;
-    line-height: 1.5 !important;
+#kc-content-wrapper>p {
+    color: #9FC7D9;
+    font-size: 16px;
+    margin-bottom: 32px;
+    text-align: center;
 }
 
 /* Form styling */
@@ -155,48 +126,7 @@ h1 {
 }
 
 .form-control::placeholder {
-    color: #9CA3AF !important;
-    font-size: 16px !important;
-    font-style: normal !important;
-    font-weight: 400 !important;
-}
-
-/* Force consistent form field styling - NUCLEAR SPECIFICITY */
-.login-pf-page .card-pf form input.form-control,
-.login-pf-page .card-pf form input[type="text"],
-.login-pf-page .card-pf form input[type="email"],
-.login-pf-page .card-pf form input[type="password"],
-.login-pf-page input.form-control,
-.login-pf-page input[type="text"],
-.login-pf-page input[type="email"],
-.login-pf-page input[type="password"] {
-    height: 60px !important;
-    min-height: 60px !important;
-    max-height: 60px !important;
-    padding: 18px 20px !important;
-    font-size: 16px !important;
-    font-style: normal !important;
-    font-weight: 400 !important;
-    line-height: 1.4 !important;
-    background: #0B1220 !important;
-    border: 1px solid #374151 !important;
-    color: white !important;
-}
-
-/* NUCLEAR PLACEHOLDER FIXES */
-.login-pf-page .card-pf form input.form-control::placeholder,
-.login-pf-page .card-pf form input[type="text"]::placeholder,
-.login-pf-page .card-pf form input[type="email"]::placeholder,
-.login-pf-page .card-pf form input[type="password"]::placeholder,
-.login-pf-page input.form-control::placeholder,
-.login-pf-page input[type="text"]::placeholder,
-.login-pf-page input[type="email"]::placeholder,
-.login-pf-page input[type="password"]::placeholder {
-    color: #9CA3AF !important;
-    font-size: 16px !important;
-    font-style: normal !important;
-    font-weight: 400 !important;
-    opacity: 1 !important;
+    color: #9CA3AF;
 }
 
 /* Labels */
@@ -208,70 +138,29 @@ label {
     display: block;
 }
 
-/* Primary button - your beautiful teal - NUCLEAR SPECIFICITY */
-.login-pf-page .card-pf form .btn-primary,
-.login-pf-page .card-pf form input[type="submit"],
-.login-pf-page .card-pf form button[type="submit"],
-.login-pf-page .card-pf .btn.btn-primary,
-.login-pf-page .btn-primary,
-.login-pf-page input[type="submit"],
-.login-pf-page button[type="submit"],
-.login-pf-page .btn.btn-primary,
-.btn-primary,
-input[type="submit"],
-button[type="submit"],
-.btn.btn-primary {
-    width: 100% !important;
-    padding: 16px 24px !important;
-    background: #CFFBF0 !important;
-    background-color: #CFFBF0 !important;
-    color: #0F1724 !important;
-    border: none !important;
-    border-color: #CFFBF0 !important;
-    border-radius: 4px !important;
-    font-size: 16px !important;
-    font-weight: 600 !important;
-    font-family: 'Inter', sans-serif !important;
-    cursor: pointer !important;
-    transition: all 0.2s ease !important;
-    margin-top: 8px !important;
-    text-decoration: none !important;
+/* Primary button - your beautiful teal */
+.btn-primary {
+    width: 100%;
+    padding: 16px 24px;
+    background: #CFFBF0;
+    color: #0F1724;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 8px;
 }
 
-/* NUCLEAR BUTTON HOVER/ACTIVE STATES */
-.login-pf-page .card-pf form .btn-primary:hover,
-.login-pf-page .card-pf form input[type="submit"]:hover,
-.login-pf-page .card-pf form button[type="submit"]:hover,
-.login-pf-page .card-pf .btn.btn-primary:hover,
-.login-pf-page .btn-primary:hover,
-.login-pf-page input[type="submit"]:hover,
-.login-pf-page button[type="submit"]:hover,
-.login-pf-page .btn.btn-primary:hover,
-.btn-primary:hover,
-input[type="submit"]:hover,
-button[type="submit"]:hover,
-.btn.btn-primary:hover {
-    background: #9FC7D9 !important;
-    background-color: #9FC7D9 !important;
-    color: #0F1724 !important;
-    transform: translateY(-1px) !important;
+.btn-primary:hover {
+    background: #9FC7D9;
+    transform: translateY(-1px);
 }
 
-.login-pf-page .card-pf form .btn-primary:active,
-.login-pf-page .card-pf form input[type="submit"]:active,
-.login-pf-page .card-pf form button[type="submit"]:active,
-.login-pf-page .card-pf .btn.btn-primary:active,
-.login-pf-page .btn-primary:active,
-.login-pf-page input[type="submit"]:active,
-.login-pf-page button[type="submit"]:active,
-.login-pf-page .btn.btn-primary:active,
-.btn-primary:active,
-input[type="submit"]:active,
-button[type="submit"]:active,
-.btn.btn-primary:active {
-    transform: translateY(0) !important;
-    background: #9FC7D9 !important;
-    background-color: #9FC7D9 !important;
+.btn-primary:active {
+    transform: translateY(0);
 }
 
 /* Secondary actions - reduced spacing */
@@ -343,7 +232,7 @@ button[type="submit"]:active,
     padding: 14px 16px;
     background: transparent;
     border: 2px solid #374151;
-    border-radius: 4px !important;
+    border-radius: 0px;
     color: white;
     text-decoration: none;
     text-align: center;
@@ -385,30 +274,70 @@ button[type="submit"]:active,
     background-position: center;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
+/* Responsive design - Hide left column on medium screens and below */
+@media (max-width: 1024px) {
     .login-pf-page {
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
 
-    .login-pf-page::before {
-        min-height: 300px;
-        flex: none;
-    }
-
-    .login-pf-page::after {
-        font-size: 24px;
-        left: 40px;
-        right: 40px;
-        text-align: center;
-        top: 150px;
-        transform: none;
+    .login-pf-page-header {
+        display: none !important;
     }
 
     .card-pf {
-        max-width: none;
+        max-width: 500px;
+        margin: 0 auto;
         padding: 40px 24px;
-        min-height: auto;
+    }
+
+    #kc-page-title {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-pf {
+        padding: 32px 20px;
+        max-width: none;
+        margin: 0;
+    }
+
+    #kc-page-title {
+        font-size: 28px;
+    }
+
+    .form-control {
+        padding: 14px 16px;
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+
+    .btn-primary {
+        padding: 14px 20px;
+        font-size: 16px;
+    }
+
+    .kc-social-links .list-unstyled {
+        flex-direction: column;
+    }
+
+    .kc-social-provider-button {
+        padding: 12px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-pf {
+        padding: 24px 16px;
+    }
+
+    #kc-page-title {
+        font-size: 24px;
+    }
+
+    .kc-form-options {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
     }
 }
 
