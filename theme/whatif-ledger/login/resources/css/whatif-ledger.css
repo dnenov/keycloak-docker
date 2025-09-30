@@ -1,5 +1,5 @@
 /* WhatIf Ledger Custom Keycloak Theme */
-/* Version: 2024-01-30-v3 - Fixed Form Styling */
+/* Version: 2024-01-30-v4 - PatternFly CSS Override Fix */
 /* Your exact color scheme: #0F1724, #081023, #0B1220, #062E2A, #9FC7D9, #CFFBF0 */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -381,19 +381,98 @@ label {
     display: none !important;
 }
 
-/* Keep form elements with proper rounded corners */
+/* STRONG OVERRIDES FOR PATTERNFly CSS CONFLICTS */
+/* These need higher specificity to override PatternFly's aggressive styling */
+
+/* Form controls - combat PatternFly overrides */
+.pf-c-form-control.form-control,
 .form-control,
-.btn-primary,
 input[type="text"],
 input[type="email"],
 input[type="password"],
-input[type="submit"] {
+input[type="submit"],
+#username,
+#password {
+    width: 100% !important;
+    padding: 16px 20px !important;
+    background: #0B1220 !important;
+    border: 2px solid #374151 !important;
     border-radius: 4px !important;
+    color: white !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    font-style: normal !important; /* Fix italic text */
+    line-height: 1.5 !important;
+    transition: all 0.2s ease !important;
+    box-sizing: border-box !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
 }
 
-/* Social buttons can be square */
+/* Placeholder text - fix italic and color */
+.pf-c-form-control.form-control::placeholder,
+.form-control::placeholder,
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+    color: #9CA3AF !important;
+    font-style: normal !important; /* Fix italic placeholders */
+    opacity: 1 !important;
+}
+
+/* Focus states */
+.pf-c-form-control.form-control:focus,
+.form-control:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none !important;
+    border-color: #CFFBF0 !important;
+    box-shadow: 0 0 0 3px rgba(207, 251, 240, 0.1) !important;
+    background: #0B1220 !important;
+}
+
+/* Buttons */
+.pf-c-button.pf-m-primary.btn-primary,
+.btn-primary,
+input[type="submit"] {
+    width: 100% !important;
+    padding: 16px 20px !important;
+    background: linear-gradient(135deg, #CFFBF0 0%, #9FC7D9 100%) !important;
+    border: none !important;
+    border-radius: 4px !important;
+    color: #0F1724 !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    font-style: normal !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #B8F7E8 0%, #8BC5C7 100%) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(207, 251, 240, 0.3) !important;
+}
+
+/* Social buttons */
 .kc-social-provider-button {
     border-radius: 4px !important;
+    font-style: normal !important;
+}
+
+/* Labels */
+.pf-c-form__label,
+.pf-c-form__label-text,
+label {
+    color: #9FC7D9 !important;
+    font-weight: 500 !important;
+    font-style: normal !important;
+    margin-bottom: 8px !important;
+    display: block !important;
 }
 
 /* Consistent link styling for all auth pages */
