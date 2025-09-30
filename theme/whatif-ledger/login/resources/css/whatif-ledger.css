@@ -1,5 +1,5 @@
 /* WhatIf Ledger Custom Keycloak Theme */
-/* Version: 2024-01-30-v4 - PatternFly CSS Override Fix */
+/* Version: 2024-01-30-v5 - NUCLEAR PatternFly Override */
 /* Your exact color scheme: #0F1724, #081023, #0B1220, #062E2A, #9FC7D9, #CFFBF0 */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -79,6 +79,7 @@ body {
     box-shadow: none;
     min-height: 100vh;
     box-sizing: border-box;
+    margin: 0 !important;
 }
 
 /* Logo and header */
@@ -279,6 +280,8 @@ label {
 @media (max-width: 1024px) {
     .login-pf-page {
         grid-template-columns: 1fr;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     .login-pf-page-header {
@@ -475,6 +478,46 @@ label {
     font-style: normal !important;
     margin-bottom: 8px !important;
     display: block !important;
+}
+
+/* NUCLEAR OPTION - OVERRIDE ALL PATTERNFly BULLSHIT */
+/* Tell PatternFly to FUCK OFF with our layout */
+.login-pf-page,
+.login-pf-page .login-pf-page-header,
+.login-pf-page-header {
+    margin: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    min-height: 100vh !important;
+    box-sizing: border-box !important;
+}
+
+/* Force our grid layout to work */
+.login-pf-page .card-pf {
+    margin: 0 !important;
+    padding: 80px 60px !important;
+    background: #0F1724 !important;
+    border: none !important;
+    box-shadow: none !important;
+    min-height: 100vh !important;
+    box-sizing: border-box !important;
+}
+
+/* Override any PatternFly margin/padding bullshit */
+.login-pf-page .login-pf-page-header,
+#kc-header,
+#kc-header-wrapper {
+    margin: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 30px !important;
+    background: linear-gradient(135deg, #081023 0%, #0B1220 50%, #062E2A 100%) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    box-sizing: border-box !important;
 }
 
 /* Consistent link styling for all auth pages */
