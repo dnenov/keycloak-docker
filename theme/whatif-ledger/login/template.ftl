@@ -37,8 +37,8 @@
 </head>
 
 <body class="${properties.kcBodyClass!}">
-<div class="${properties.kcLoginClass!}">
-    <div id="kc-header" class="${properties.kcHeaderClass!}">
+<div class="login-pf-page">
+    <div class="login-pf-page-header" id="kc-header" class="${properties.kcHeaderClass!}">
         <div id="kc-header-wrapper" class="${properties.kcHeaderWrapperClass!}">
             ${kcSanitize(msg("loginTitleHtml",(realm.displayNameHtml!'')))?no_esc}
         </div>
