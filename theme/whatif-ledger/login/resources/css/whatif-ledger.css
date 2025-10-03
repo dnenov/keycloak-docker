@@ -287,7 +287,7 @@ label {
     }
 
     .card-pf {
-        max-width: 500px;
+        max-width: none;
         margin: 0 auto;
         padding: 40px 24px;
     }
